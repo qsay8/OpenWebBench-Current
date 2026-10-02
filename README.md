@@ -54,3 +54,5 @@ Issues and pull requests are welcome. Please include browser name/version, opera
 ## Licence
 
 MIT. See `LICENSE`.
+
+This project is tested with BrowserStack.
