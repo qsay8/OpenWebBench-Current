@@ -21,7 +21,7 @@ test('valid form announces confirmation', async ({ page }) => {
   await page.getByLabel('Name').fill('Taylor');
   await page.getByLabel('Email address').fill('taylor@example.org');
   await page.getByRole('button', { name: 'Validate form' }).click();
-  await expect(page.getByRole('status')).toContainText('Thanks, Taylor.');
+  await expect(page.locator('#form-status')).toContainText('Thanks, Taylor.');
   await expect(page.locator('#email')).toHaveAttribute('aria-invalid', 'false');
 });
 

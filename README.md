@@ -6,7 +6,7 @@ OpenWebBench is a self-contained demo application and automated test suite for c
 
 ## Why it exists
 
-Small web projects often test only the browser available to the maintainer. OpenWebBench provides a transparent baseline that contributors can run locally and, when configured, across remote browser/device environments such as BrowserStack.
+Small web projects often test only the browser available to the maintainer. OpenWebBench provides a transparent baseline that contributors can run locally and, where available, across different browsers and operating systems.
 
 ## Features
 
@@ -36,9 +36,13 @@ npm test
 
 Tests run in Chromium, Firefox, and WebKit locally. Browser availability depends on the host operating system and installed Playwright browsers.
 
-## BrowserStack
+## Browser compatibility
 
-This repository is structured so its Playwright tests can be adapted to BrowserStack Automate. BrowserStack credentials must be stored as CI secrets and must never be committed. See `docs/BROWSERSTACK.md` for a safe setup outline. The project does not claim BrowserStack integration is active until credentials and a compatible runner are configured.
+OpenWebBench is designed to run the same automated test suite across different browser engines and operating systems.
+
+The project currently uses Playwright for local Chromium, Firefox, and WebKit testing. The planned testing architecture also supports self-hosted workers, including a macOS worker for genuine Safari testing using Safari WebDriver.
+
+Browser-specific test infrastructure is intended to remain independent of any particular commercial testing provider.
 
 ## Contributing
 
@@ -46,7 +50,8 @@ Issues and pull requests are welcome. Please include browser name/version, opera
 
 ## Roadmap
 
-- Add documented BrowserStack Automate execution
+- Add a self-hosted macOS testing worker
+- Add genuine Safari WebDriver testing
 - Add visual regression snapshots after establishing stable baselines
 - Expand keyboard and screen-reader-oriented checks
 - Add reproducible test cases for reported browser bugs
@@ -55,4 +60,3 @@ Issues and pull requests are welcome. Please include browser name/version, opera
 
 MIT. See `LICENSE`.
 
-This project is tested with BrowserStack.
